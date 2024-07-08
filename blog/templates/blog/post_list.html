@@ -10,27 +10,22 @@
         <h1>Blog Web Post</h1>
     </header>
 
-    <article>
-        <h2>Title</h1>
-        <time>Time published</time>
-        <p>Article text</p>
-        <p><strong>Author</strong></p>
-    </article>
-
-    <article>
-        <h2>Title</h1>
-        <time>Time published</time>
-        <p>Article text</p>
-        <p><strong>Author</strong></p>
-    </article>
-
-    {% for post in posts %}
-    <article>
-        <time>published: {{post.published_date}}</time>
-        <h1>{{post.title}}</h1>
-        <p>{{post.text}}</p>
-    </article>        
-    {% endfor %}
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                {% for post in posts %}
+                    <article class="post">
+                        <h2><a href="">{{ post.title }}</a></h2>
+                        <time class="date">
+                            {{ post.published_date }}
+                        </time>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    
 
 
     
