@@ -23,7 +23,14 @@
         <p>Article text</p>
         <p><strong>Author</strong></p>
     </article>
-       
+
+    {% for post in posts %}
+    <article>
+        <time>published: {{post.published_date}}</time>
+        <h1>{{post.title}}</h1>
+        <p>{{post.text}}</p>
+    </article>        
+    {% endfor %}
 
 
     
